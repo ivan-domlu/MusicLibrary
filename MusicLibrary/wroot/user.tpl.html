@@ -1,0 +1,94 @@
+<html lang="es-mx">
+	<head>
+		<title>MUSIC LIBRARY</title>
+		<meta charset="utf-8">		
+		<style>
+			body {				            
+				background-color: gray;     				
+				height: 97vh;       
+				padding: 0;
+				margin: 0;
+			}		
+
+			nav {
+				width: 100%;
+				margin: 0;							
+				background-color: black;
+				color: #68AAB3;
+			}
+
+			nav>h1 {
+				padding: 1%;				
+			}
+			
+			.container{
+				margin: 1%;
+			}
+
+			.row {
+				width: 100%;
+				margin: auto;
+				display: flex;
+			}
+			
+			.column {
+				margin: auto;
+			}
+
+			legend {
+				font-size: 120%;
+			}
+		</style>		
+	</head>
+	<body>
+		<nav>
+			<h1>Bienvenido  {{username}}</h1>
+		</nav>	
+							
+		<div class="container">			
+			<form class="form-horizontal" name="frmPeople" action="/indexada" method="GET">
+				<fieldset>
+					<legend>Tu biblioteca</legend>
+					
+					<div class="">
+						<div class="col-md-6">
+							<label class="control-label" for="orden"><b>Ordenar por:</b> </label>
+							<br>
+							<select id="orden" name="orden" class="form-control input-md">
+								<option value=""> Seleccionar </option>
+								<option value="1">Canción</option>
+								<option value="2">Álbum</option>
+								<option value="3">Artista</option>
+								<option value="4">Lanzamiento</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+							<br>
+							<button type="submit" id="show" name="show" value="show" class="btn btn-success">Ordenar</button>
+						</div>
+					</div>
+					
+				</fieldset>
+			</form>
+									
+			<div class="row">
+				<div class="column">
+					<b></b>
+				</div>
+				<div class="column">
+					<b>Canción</b>
+				</div>
+				<div class="column">
+					<b>Álbum</b>
+				</div>
+				<div class="column">
+					<b>Artista</b>
+				</div>
+				<div class="column">
+					<b>Lanzamiento</b>
+				</div>				
+			</div>
+			{{pData}}
+		</div>				
+	</body>
+</html>
