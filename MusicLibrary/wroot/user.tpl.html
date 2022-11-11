@@ -1,0 +1,184 @@
+<html lang="es-mx">
+	<head>
+		<title>MUSIC LIBRARY</title>
+		<meta charset="utf-8">		
+		<style>
+			body {				            
+				background-color:#ff7a00;     				
+				height: 97vh;       
+				padding: 0;
+				margin: 0;
+			}		
+
+			nav {
+				width: 100%;
+				margin: 0;							
+				background-color: black;
+			}
+						
+			nav>h1 {
+				padding: 1%;
+				display: inline-block;		
+				margin: auto 0;		
+				justify-self: flex-end;
+			}
+
+			nav>button {				
+				float: right;				
+				align-self: center;	
+				font-size: 110%;
+				margin-right: 1%;
+				margin-top: 1%;
+				border-radius: 5px;
+				background-color: gray;
+			}
+
+			a:link, a:visited, a:active {
+				text-decoration:none;
+				color: white;
+			}
+
+			.container{
+				margin: 1%;
+				text-align: center;
+			}
+
+			.row {
+				width: 100%;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				margin: auto;
+				display: flex;
+				background-color:#ffa858 ;
+			}
+			
+			.column {
+				display: flex;
+				justify-content: center;
+				margin: auto;
+				width: 12%;
+			}
+
+			legend {
+				font-size: 120%;
+			}
+
+			.title {
+				margin: auto;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				color: white;
+				background-color: black;
+			}
+
+			.buttons {
+				width: 100%;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				margin: auto;
+				display: flex;					
+			}
+
+			#biblioForm {
+				margin: auto;
+				width: 100%;
+			}
+
+			.biblioButton {
+				margin: 1%;
+				border-radius: 10px;
+				padding: 1%;
+				font-size: 130%;
+				font-weight: 600;
+				background-color: #ffa858;
+			}			
+			
+			.play {
+				display: flex;
+				align-content: center;
+				margin: auto;        
+				border-radius: 50%; 
+				background-color: #ffa858;
+				fill: black;
+				width: 3.5vw;
+				height: 3.5vw;
+			}
+
+			.play:hover {
+				background-color: black; 
+				fill: white;
+			}
+
+			.play>svg {            
+				width: 60%;
+				height: 60%;            
+				margin: auto;
+			}     
+			
+			.save {
+				display: flex;
+				align-content: center;
+				margin: auto;        
+				border-radius: 50%; 
+				fill: black;
+				background-color: #ffa858;
+				width: 3.5vw;
+				height: 3.5vw;
+			}
+
+			.save:hover {
+				background-color: black; 
+				fill: white
+			}
+
+			.save>svg {            
+				width: 60%;
+				height: 60%;            
+				margin: auto;
+			}
+
+			
+			input {
+				display: none;
+			}
+		</style>		
+	</head>
+	<body>
+		<nav>
+			<h1><a href="http://localhost:8080/userV">Bienvenido  {{username}}</a></h1>
+			<button type="button"><a href="http://localhost:8080">Cerrar Sesión</a></button>
+		</nav>	
+							
+		<div class="container">			
+			<div class="buttons">
+				<form id="biblioForm" action="/indexada/" method="GET">
+					<button class="biblioButton" type="submit" name="type" value="1">MI BIBLIOTECA</button>
+					<button class="biblioButton" type="submit" name="type" value="2">BIBLIOTECA GENERAL</button>
+				</form>
+			</div>
+			
+			<h3 class="title">HISTORIAL</h3>
+			
+			<div class="row">
+				<div class="column">																
+				</div>
+				<div class="column">
+					<b>Canción</b>
+				</div>
+				<div class="column">
+					<b>Artista</b>
+				</div>
+				<div class="column">
+					<b>Género</b>
+				</div>
+				<div class="column">
+					<b>Álbum</b>
+				</div>
+				<div class="column">
+					<b>Lanzamiento</b>
+				</div>				
+			</div>
+			{{pData}}
+		</div>				
+	</body>
+</html>
